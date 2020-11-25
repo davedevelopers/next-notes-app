@@ -1,11 +1,15 @@
-import React from 'react';
-import {useRouter} from 'next/router'
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
-export default function Home (){
-    const router = useRouter();
+export default () => {
+  const router = useRouter();
+  const { id } = router.query;
 
-    const {id} = router.query;
-    return (
-        <h1>Note {id} page</h1>
-    );
-}
+  return (
+    <div sx={{ variant: "containers.page" }}>
+      <h1>Note: {id} </h1>
+    </div>
+  );
+};
